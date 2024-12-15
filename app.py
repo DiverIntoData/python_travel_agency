@@ -89,7 +89,7 @@ if road_trip in ["yes", "y"]:
     origin = (residency,)
     final_destination = (residency,)
     chatgpt_comments = get_chatgpt_comments(cities_to_visit, earliest_departure_date, latest_departure_date)
-    st.markdown("## Jennifer, The Travel Sassystant:")
+    st.markdown("## Jessica, The Travel Sassystant:")
     st.write(chatgpt_comments)
 
     if st.button("Plan Land Trip"):
