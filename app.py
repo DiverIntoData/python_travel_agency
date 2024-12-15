@@ -149,3 +149,30 @@ elif road_trip in ["no", "n"]:
             st.write("Top 5 Cheapest Flights:", top_5_cheapest_flights_info_df)
             st.write("Shortest Route:", travel_times_df)
             map_function(map_route)
+            
+# Add "Buy Me a Coffee" Button
+st.markdown("---")
+
+# Add LinkedIn Icon
+col1, col2 = st.columns([2, 1])  # Adjust column width as necessary
+with col1:
+    st.components.v1.html("""
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+        data-name="bmc-button" data-slug="xaviersamper" 
+        data-color="#FFDD00" data-emoji="" 
+        data-font="Cookie" data-text="Buy me a coffee" 
+        data-outline-color="#000000" 
+        data-font-color="#000000" 
+        data-coffee-color="#ffffff">
+    </script>
+    """, height=70)
+
+with col2:
+    st.markdown(
+        f"""
+        <a href="https://www.linkedin.com/in/xaviersamper/" target="_blank">
+            <img src="images/Linkedin-Logo-2011.png" alt="LinkedIn Profile" style="width: auto; height: 70px;">
+        </a>
+        """,
+        unsafe_allow_html=True,
+    )
