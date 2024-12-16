@@ -110,9 +110,11 @@ def get_chatgpt_comments(cities, earliest_departure_date, latest_departure_date)
     
     # Send the prompt to OpenAI's GPT model using gpt-3.5-turbo (or gpt-4)
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",  # Using gpt-3.5-turbo or gpt-4
-        messages=[{"role": "system", "content": "You are a witty and sassy assistant."},
-                  {"role": "user", "content": prompt}]
+        model="gpt-3.5-turbo",  # Or "gpt-4"
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": "What do you think of this trip itinerary?"}
+        ]
     )
     
     # Extract the response text
