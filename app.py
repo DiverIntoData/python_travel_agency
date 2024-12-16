@@ -6,7 +6,7 @@ from road_trip_round_trip_function import road_trip_round_trip_function
 import IPython
 
 # API Keys (Replace with your actual key)
-openai.api_key = 'sk-proj-YOUR-API-KEY-HERE'  # Replace with your actual API key
+openai.api_key = openai_api_key  # Replace with your actual API key
 API_KEY = "YOUR-API-KEY-HERE"     # Google Distance Matrix API key
 
 # Streamlit App
