@@ -112,8 +112,8 @@ def get_chatgpt_comments(cities, earliest_departure_date, latest_departure_date)
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",  # Or "gpt-4"
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": "What do you think of this trip itinerary?"}
+            {"role": "system", "content": "You are a helpful travel assistant."},
+            {"role": "user", "content": f"Plan a trip to these cities: {cities_to_visit}. Departure date range: {earliest_departure_date} to {latest_departure_date}."}
         ]
     )
     
