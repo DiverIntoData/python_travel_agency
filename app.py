@@ -5,12 +5,47 @@ from one_way_trip_with_flights import one_way_trip_with_flights
 from road_trip_round_trip_function import road_trip_round_trip_function
 import IPython
 
-# OpenAI API Key (Replace with your actual key)
+# API Keys (Replace with your actual key)
 openai.api_key = 'sk-proj-YOUR-API-KEY-HERE'  # Replace with your actual API key
-API_KEY = "YOUR-API-KEY-HERE"     # Google API key
+API_KEY = "YOUR-API-KEY-HERE"     # Google Distance Matrix API key
 
 # Streamlit App
-st.title("Travel Planner")
+st.title("Travel Planner App! 🌍✈️🚗")
+
+# Add the message on how to use the
+st.markdown(
+    """
+    <div style="border: 2px solid #d3d3d3; padding: 15px; border-radius: 10px; background-color: #f8f8f8; color: #000;">
+        <h4 style="text-align: center;">How to use:</h4>
+        <p style="text-align: left; font-size: 16px;">
+            Plan your perfect trip effortlessly! Whether you’re road-tripping or flying, our app helps you:
+        </p>
+        <ul style="padding-left: 20px; font-size: 16px;">
+            <li>Create Itineraries: Enter cities you want to visit, and we’ll calculate the best routes.</li>
+            <li>Find Flights: Get top flight options for one-way or round trips.</li>
+            <li>Explore Activities: Discover events, foods, and attractions in each destination.</li>
+            <li>Visualize Your Journey: View interactive maps of your routes.</li>
+        </ul>
+        <p style="text-align: left; font-size: 16px; margin-top: 20px;">
+            Simply input your travel details (cities, dates, and preferences), and let us do the planning. Start your adventure today! 🚀
+        </p>
+        <h4 style="text-align: center; margin-top: 30px;">⚠️ Attention!</h4>
+        <p style="text-align: left; font-size: 16px; margin-top: 10px;">
+            If you need the app to search for your flights, make sure to input your dates and maximum and minimum days of your trip properly.
+        </p>
+        <p style="text-align: left; font-size: 16px; margin-top: 10px;">
+            For example, if you input your dates between <b>2025-01-01</b> and <b>2025-01-15</b>, with days of your trip between <b>1</b> and <b>14</b>, it will look for all the combinations.
+        </p>
+        <p style="text-align: left; font-size: 16px; margin-top: 10px;">
+            Keep in mind that each flight search takes approximately  <b>25 seconds per flight scraped</b>. Therefore, our example would take over <b>1 hour</b> to fetch the flights, and the results won't be usable.
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
 
 # User Inputs
 residency = st.text_input("Where do you live?", placeholder="Enter your home city").strip()
@@ -149,12 +184,31 @@ elif road_trip in ["no", "n"]:
             st.write("Top 5 Cheapest Flights:", top_5_cheapest_flights_info_df)
             st.write("Shortest Route:", travel_times_df)
             map_function(map_route)
-            
+
 # Add "Buy Me a Coffee" Button
 st.markdown("---")
 
+# Add the message to the app
+st.markdown(
+    """
+    <div style="border: 2px solid #FFDD00; padding: 15px; border-radius: 10px; background-color: #FFF9C4; color: #000;">
+        <p style="text-align: center; font-size: 16px;">
+            Unfortunately, this service is not free. It requires OpenAI and Google APIs to run.
+        </p>
+        <p style="text-align: center; font-size: 16px;">
+            If you enjoyed it, please consider 
+            <a href="https://buymeacoffee.com/xaviersamper" target="_blank" style="text-decoration: none; color: #FF6600; font-weight: bold;">
+                buying me a coffee ☕
+            </a>. 
+            Thank you, and have a safe trip!
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 # Add LinkedIn Icon
-col1, col2 = st.columns([2, 1])  # Adjust column width as necessary
+col1, col2 = st.columns([1, 1])  # Adjust column width as necessary
 with col1:
     st.components.v1.html("""
     <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
@@ -168,11 +222,14 @@ with col1:
     """, height=70)
 
 with col2:
-    st.markdown(
-        f"""
-        <a href="https://www.linkedin.com/in/xaviersamper/" target="_blank">
-            <img src="images/Linkedin-Logo-2011.png" alt="LinkedIn Profile" style="width: auto; height: 70px;">
+    st.components.v1.html("""
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://www.linkedin.com/in/xaviersamper/" target="_blank" 
+        style="text-decoration: none; font-family: Arial, sans-serif; padding: 10px 20px; 
+                background-color: #0077b5; color: white; font-size: 16px; border-radius: 5px; 
+                display: inline-block">
+            Connect on LinkedIn
         </a>
-        """,
-        unsafe_allow_html=True,
-    )
+    </div>
+    """)
+
