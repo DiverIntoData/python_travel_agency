@@ -1,10 +1,6 @@
 def find_flight_price(flight_origin, flight_destination, departure_date, return_date=None):
     """
     This function finds the "Best" price in Kayak given an origin, destination, departure date, and optional return_date.
-        - flight_origin: 3-letter code of the airport/area. Use find_kayak_airport function to find it.
-        - flight_destination: 3-letter code of the airport/area. Use find_kayak_airport function to find it.
-        - departure_date: Date in YYYY-MM-DD format.
-        - return_date: Date in YYYY-MM-DD format. Optional value. If not used, will find one-way flights.
     """
     import time
     import re
@@ -24,10 +20,10 @@ def find_flight_price(flight_origin, flight_destination, departure_date, return_
     # Use ChromeDriverManager to automatically download and manage ChromeDriver
     service = Service(ChromeDriverManager().install())
 
-    # Create a new instance of Chrome in headless mode
-    browser = webdriver.Chrome(service=service, options=options)
-
     try:
+        # Create a new instance of Chrome in headless mode
+        browser = webdriver.Chrome(service=service, options=options)
+
         # Determine if the trip is one-way or round trip, and use the proper URL
         if return_date is None:
             kayak_url = f"https://www.kayak.es/flights/{flight_origin}-{flight_destination}/{departure_date}?ucs=1993xcp"
@@ -65,6 +61,7 @@ def find_flight_price(flight_origin, flight_destination, departure_date, return_
         price_number = None
     finally:
         # Close the browser
-        browser.quit()
+        if 'browser' in locals():
+            browser.quit()
 
     return price_number
