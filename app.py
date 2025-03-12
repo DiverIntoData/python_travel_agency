@@ -27,29 +27,26 @@ with st.expander("📌 Important information"):
     st.markdown(
         """
         <div style="border: 2px solid #d3d3d3; padding: 15px; border-radius: 10px; background-color: #f8f8f8; color: #000;">
-            <h4 style="text-align: center;">How to use:</h4>
+            <h4 style="text-align: center;">👩‍💻💭 What can you use it for:</h4>
             <p style="text-align: left; font-size: 16px;">
-                Plan your perfect trip effortlessly! Whether you’re road-tripping or flying, our app helps you:
+                This tool is designed for trips where you visit one or more cities and return home. For example, if you want to explore multiple cities in the USA, simply input the cities (e.g., San Francisco, Los Angeles, San Diego, Las Vegas), and it will find the cheapest flights to your destination and the best routes to travel between cities.<br>
+                📝<b>Note</b>: This tool can also be used for trips to a single city. However, it does <b>not</b> search for flights between the cities you input.
+            </p>
+            <h4 style="text-align: center; margin-top: 15px;">🛠️ How to use:</h4>
+            <p style="text-align: left; font-size: 16px;">
+                Plan your perfect trip effortlessly!:
             </p>
             <ul style="padding-left: 20px; font-size: 16px;">
-                <li>Create Itineraries: Enter cities you want to visit, and we’ll calculate the best routes.</li>
-                <li>Find Flights: Get top flight options for one-way or round trips.</li>
-                <li>Explore Activities: Discover events, foods, and attractions in each destination.</li>
-                <li>Visualize Your Journey: View interactive maps of your routes.</li>
+                <li><b>Create Itineraries</b> 🗺️: Enter cities you want to visit, and we’ll calculate the best land routes.</li>
+                <li><b>Get Recommendations</b> 🗣️: Ask Jennifer, The Travel Sassystant for sassy tips, events, and food suggestions.</li>
+                <li><b>Find Flights (Optional)</b> ✈️: Get top flight options for one-way or round trips. Don’t forget to enter your dates!</li>
+                <li><b>Visualize Your Journey</b> 📍: View interactive maps of your routes.</li>
             </ul>
-            <p style="text-align: left; font-size: 16px; margin-top: 20px;">
-                Simply input your travel details (cities, dates, and preferences), and let us do the planning. Start your adventure today! 🚀
-            </p>
-            <h4 style="text-align: center; margin-top: 30px;">⚠️ Attention!</h4>
-            <p style="text-align: left; font-size: 16px; margin-top: 10px;">
-                If you need the app to search for your flights, make sure to input your dates and maximum and minimum days of your trip properly.
-            </p>
-            <p style="text-align: left; font-size: 16px; margin-top: 10px;">
-                For example, if you input your dates between <b>2025-01-01</b> and <b>2025-01-15</b>, with days of your trip between <b>1</b> and <b>14</b>, it will look for all the combinations.
-            </p>
-            <p style="text-align: left; font-size: 16px; margin-top: 10px;">
-                Keep in mind that each flight search takes approximately  <b>25 seconds per flight scraped</b>. Therefore, our example would take over <b>1 hour</b> to fetch the flights, and the results won't be usable.
-            </p>
+            <h4 style="text-align: center; margin-top: 15px;">⚠️ Attention!</h4>
+            <ul style="padding-left: 20px; font-size: 16px;">
+                <li><b>Input Dates Carefully</b> 📅: If you need the app to search for flights, make sure to input your earliest and latest departure dates and the minimum and maximum days of your trip properly.<br>For example, if your dates are between <b>2025-01-01</b> and <b>2025-01-15</b>, with trip days between <b>1</b> and <b>14</b>, the app will look for all possible <b>210 combinations</b>.</li>
+                <li><b>Flight Searches Take Time</b> ⏳: Each flight search takes approximately <b>25 seconds per flight</b> scraped. Searching for a wide date range (e.g., 14 days) could take over <b>1.5 hours</b>, making the results unusable. For faster results, narrow your date range.</li>
+            </ul>
         </div>
         """,
         unsafe_allow_html=True
