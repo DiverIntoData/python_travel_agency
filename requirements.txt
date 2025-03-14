@@ -6,3 +6,4 @@ requests
 pandas
 datetime
 webdriver-manager
+google-chrome-stable
