@@ -25,7 +25,7 @@ def find_flight_price(flight_origin, flight_destination, departure_date, return_
     options.add_experimental_option("useAutomationExtension", False)
 
     # Use webdriver-manager to automatically manage ChromeDriver
-    service = Service(ChromeDriverManager().install())
+    service = Service(ChromeDriverManager(version="114.0.5735.90").install())
 
     # Create new instance of Chrome in headless mode
     browser = webdriver.Chrome(service=service, options=options)
