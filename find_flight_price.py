@@ -7,6 +7,7 @@ def find_flight_price(flight_origin, flight_destination, departure_date, return_
     from selenium.webdriver.chrome.service import Service
     from selenium.webdriver.chrome.options import Options
     from webdriver_manager.chrome import ChromeDriverManager
+    from selenium_stealth import stealth
 
     # Initialize price_number with a default value
     price_number = None
@@ -15,20 +16,22 @@ def find_flight_price(flight_origin, flight_destination, departure_date, return_
     options = Options()
     options.add_argument("--headless")
 
-    # Set a realistic user agent
-    user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36"
-    options.add_argument(f'user-agent={user_agent}')
-
-    # Disable automation flags
-    options.add_argument("--disable-blink-features=AutomationControlled")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option("useAutomationExtension", False)
-
     # Use webdriver-manager to automatically manage ChromeDriver
-    service = Service(ChromeDriverManager(version="114.0.5735.90").install())
+    service = Service(ChromeDriverManager().install())
 
     # Create new instance of Chrome in headless mode
     browser = webdriver.Chrome(service=service, options=options)
+
+    stealth(
+        browser,
+        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+        languages=["en-US", "en"],
+        vendor="Google Inc.",
+        platform="Win32",
+        webgl_vendor="Intel Inc.",
+        renderer="Intel Iris OpenGL Engine",
+        fix_hairline=True
+        )
 
     # Modify navigator properties using JavaScript
     browser.execute_cdp_cmd(
