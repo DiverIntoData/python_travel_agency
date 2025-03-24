@@ -6,4 +6,4 @@ requests
 pandas
 datetime
 webdriver-manager
-seleniumbase
+selenium-stealth
